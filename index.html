@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Fit - Gimnasio Premium & Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'fit-red': '#DC2626',
+                        'fit-black': '#1F2937',
+                        'fit-gray': '#374151',
+                        'fit-orange': '#EA580C',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-fit-black">
+    <!-- Header/Navigation -->
+    <header class="bg-fit-black bg-opacity-90 fixed w-full top-0 z-50 border-b border-fit-gray">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-fit-red rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-dumbbell text-white text-lg"></i>
+                    </div>
+                    <div class="text-2xl font-bold text-white">STUDIO<span class="text-fit-red">FIT</span></div>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-300 hover:text-white transition font-medium">Inicio</a>
+                    <a href="#clases" class="text-gray-300 hover:text-white transition font-medium">Clases</a>
+                    <a href="#planes" class="text-gray-300 hover:text-white transition font-medium">Planes</a>
+                    <a href="#entrenadores" class="text-gray-300 hover:text-white transition font-medium">Entrenadores</a>
+                    <a href="#testimonios" class="text-gray-300 hover:text-white transition font-medium">Testimonios</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-white transition font-medium">Contacto</a>
+                </div>
+
+                <!-- Botones CTA -->
+                <div class="hidden md:flex space-x-4">
+                    <button class="bg-fit-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-medium pulse-glow">
+                        <i class="fas fa-calendar-check mr-2"></i>Clase de Prueba
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t border-fit-gray">
+                <div class="flex flex-col space-y-4">
+                    <a href="#inicio" class="text-gray-300 hover:text-white transition font-medium">Inicio</a>
+                    <a href="#clases" class="text-gray-300 hover:text-white transition font-medium">Clases</a>
+                    <a href="#planes" class="text-gray-300 hover:text-white transition font-medium">Planes</a>
+                    <a href="#entrenadores" class="text-gray-300 hover:text-white transition font-medium">Entrenadores</a>
+                    <a href="#testimonios" class="text-gray-300 hover:text-white transition font-medium">Testimonios</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-white transition font-medium">Contacto</a>
+                    <div class="pt-2">
+                        <button class="bg-fit-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition text-sm font-medium w-full pulse-glow">
+                            <i class="fas fa-calendar-check mr-1"></i>Clase de Prueba
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg bg-cover bg-center pt-20">
+        <div class="py-32">
+            <div class="container mx-auto px-6 text-center text-white fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">TRANSFORMA <span class="text-fit-red">TU CUERPO</span></h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+                    Descubre tu mejor versión con entrenamientos personalizados y tecnología de punta
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <button class="bg-fit-red text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition transform hover:scale-105 pulse-glow">
+                        <i class="fas fa-play-circle mr-2"></i>Empieza Hoy - $0 Inscripción
+                    </button>
+                    <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-fit-black transition transform hover:scale-105">
+                        <i class="fas fa-video mr-2"></i>Ver Video Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="py-16 bg-fit-gray">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-3xl md:text-4xl font-bold text-fit-red mb-2">500+</div>
+                    <div class="text-gray-300">Miembros Activos</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-3xl md:text-4xl font-bold text-fit-red mb-2">15+</div>
+                    <div class="text-gray-300">Clases Diarias</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-3xl md:text-4xl font-bold text-fit-red mb-2">98%</div>
+                    <div class="text-gray-300">Clientes Satisfechos</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-3xl md:text-4xl font-bold text-fit-red mb-2">24/7</div>
+                    <div class="text-gray-300">Acceso Premium</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clases -->
+    <section id="clases" class="py-20 bg-fit-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Nuestras <span class="text-fit-red">Clases</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Variedad de entrenamientos para todos los niveles y objetivos</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Clase 1 - CROSSFIT -->
+                <div class="bg-fit-gray rounded-2xl shadow-2xl overflow-hidden hover:shadow-red-500/20 transition group fade-in">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-white">CrossFit</h3>
+                            <span class="text-fit-red font-bold text-xl">$45.000/mes</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Entrenamiento de alta intensidad que combina fuerza, resistencia y técnica.</p>
+                        <div class="flex items-center text-gray-400 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>6:00 AM - 8:00 PM</span>
+                        </div>
+                        <button class="w-full bg-fit-red text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition group-hover:scale-105">
+                            Reservar Clase
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clase 2 - YOGA -->
+                <div class="bg-fit-gray rounded-2xl shadow-2xl overflow-hidden hover:shadow-red-500/20 transition group fade-in">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1820&q=80')"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-white">Yoga & Mindfulness</h3>
+                            <span class="text-fit-red font-bold text-xl">$35.000/mes</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Mejora tu flexibilidad, equilibrio y conexión mente-cuerpo.</p>
+                        <div class="flex items-center text-gray-400 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>7:00 AM - 7:00 PM</span>
+                        </div>
+                        <button class="w-full bg-fit-red text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition group-hover:scale-105">
+                            Reservar Clase
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Clase 3 - PERSONAL TRAINING -->
+                <div class="bg-fit-gray rounded-2xl shadow-2xl overflow-hidden hover:shadow-red-500/20 transition group fade-in">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-white">Personal Training</h3>
+                            <span class="text-fit-red font-bold text-xl">$80.000/mes</span>
+                        </div>
+                        <p class="text-gray-400 mb-4">Entrenamiento 100% personalizado con seguimiento individual.</p>
+                        <div class="flex items-center text-gray-400 mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>Flexible 24/7</span>
+                        </div>
+                        <button class="w-full bg-fit-red text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition group-hover:scale-105">
+                            Reservar Clase
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes" class="py-20 bg-fit-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Planes <span class="text-fit-red">Premium</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Elige el plan que se adapte a tus objetivos y estilo de vida</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plan Básico -->
+                <div class="bg-fit-black rounded-2xl p-8 border-2 border-gray-700 hover:border-fit-red transition fade-in">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Plan Básico</h3>
+                        <div class="text-fit-red text-4xl font-bold">$79.000<span class="text-lg text-gray-400">/mes</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Acceso a zona de cardio
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Zona de pesas libre
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Lockers incluidos
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-gray-600 mr-3"></i>
+                            Clases grupales
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-gray-600 mr-3"></i>
+                            Área wellness
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-700 text-white py-3 rounded-lg font-semibold hover:bg-gray-600 transition">
+                        Elegir Plan
+                    </button>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="bg-fit-black rounded-2xl p-8 border-2 border-fit-red relative transform scale-105 fade-in">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-fit-red text-white px-6 py-2 rounded-full font-bold">
+                        MÁS POPULAR
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Plan Premium</h3>
+                        <div class="text-fit-red text-4xl font-bold">$129.000<span class="text-lg text-gray-400">/mes</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Todo del Plan Básico
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Clases grupales ilimitadas
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Área wellness (sauna, jacuzzi)
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Evaluación física mensual
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-red mr-3"></i>
+                            Acceso 24/7
+                        </li>
+                    </ul>
+                    <button class="w-full bg-fit-red text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition pulse-glow">
+                        Elegir Plan
+                    </button>
+                </div>
+
+                <!-- Plan VIP -->
+                <div class="bg-fit-black rounded-2xl p-8 border-2 border-gray-700 hover:border-fit-orange transition fade-in">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Plan VIP</h3>
+                        <div class="text-fit-orange text-4xl font-bold">$199.000<span class="text-lg text-gray-400">/mes</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-orange mr-3"></i>
+                            Todo del Plan Premium
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-orange mr-3"></i>
+                            4 sesiones personal training
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-orange mr-3"></i>
+                            Plan nutricional personalizado
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-orange mr-3"></i>
+                            Acceso a eventos exclusivos
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-fit-orange mr-3"></i>
+                            Towel service incluido
+                        </li>
+                    </ul>
+                    <button class="w-full bg-fit-orange text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition">
+                        Elegir Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrenadores -->
+    <section id="entrenadores" class="py-20 bg-fit-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Nuestros <span class="text-fit-red">Entrenadores</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Profesionales certificados que te guiarán en tu transformación</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Entrenador 1 -->
+                <div class="bg-fit-gray rounded-2xl overflow-hidden fade-in">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Marco Rodríguez</h3>
+                        <p class="text-fit-red font-semibold mb-4">Especialista en CrossFit & Functional Training</p>
+                        <p class="text-gray-400 mb-4">8+ años de experiencia. Certificado NSCA. Apasionado por ayudar a superar límites.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 2 -->
+                <div class="bg-fit-gray rounded-2xl overflow-hidden fade-in">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1549060279-7e168fce7090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ana Martínez</h3>
+                        <p class="text-fit-red font-semibold mb-4">Instructora de Yoga & Pilates</p>
+                        <p class="text-gray-400 mb-4">500h RYT Certified. Especialista en mindfulness y rehabilitación postural.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 3 -->
+                <div class="bg-fit-gray rounded-2xl overflow-hidden fade-in">
+                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Carlos López</h3>
+                        <p class="text-fit-red font-semibold mb-4">Personal Trainer & Nutricionista</p>
+                        <p class="text-gray-400 mb-4">MSc en Ciencias del Deporte. Especializado en transformaciones corporales.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-20 bg-fit-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Historias de <span class="text-fit-red">Éxito</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Lo que dicen nuestros miembros sobre su transformación</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-fit-black p-6 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fit-red rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold">María González</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">
+                        "En 6 meses perdí 15kg y gané una confianza que nunca tuve. Los entrenadores son increíbles y la comunidad es muy motivadora."
+                    </p>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="bg-fit-black p-6 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fit-red rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            J
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold">Javier Rojas</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">
+                        "El mejor gimnasio de la ciudad. Equipos de última tecnología y horarios flexibles que se adaptan a mi trabajo."
+                    </p>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="bg-fit-black p-6 rounded-2xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-fit-red rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            L
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold">Laura Mendoza</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">
+                        "Las clases de yoga cambiaron mi vida. No solo mejoré físicamente, sino que aprendí a manejar el estrés de mejor forma."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-fit-red to-fit-orange">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 fade-in">
+                ¿Listo para tu <span class="text-black">transformación</span>?
+            </h2>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto fade-in">
+                Agenda tu clase de prueba gratuita y descubre por qué somos el gimnasio #1 de la ciudad
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 fade-in">
+                <button class="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-800 transition transform hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i>Agendar Clase Prueba
+                </button>
+                <button class="bg-white text-fit-red px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    <i class="fas fa-map-marker-alt mr-2"></i>Visitar Nuestras Instalaciones
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-fit-black">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Información -->
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold text-white mb-8">Visítanos</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-fit-red text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Dirección</h3>
+                                <p class="text-gray-400">Av. Fitness 123, Zona Deportiva</p>
+                                <p class="text-gray-400">Bogotá, Colombia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-fit-red text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Horarios</h3>
+                                <p class="text-gray-400">Lunes a Viernes: 5:00 - 23:00</p>
+                                <p class="text-gray-400">Sábados: 6:00 - 22:00</p>
+                                <p class="text-gray-400">Domingos: 7:00 - 20:00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-fit-red text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Teléfono</h3>
+                                <p class="text-gray-400">+57 1 234 5678</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-fit-red text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Email</h3>
+                                <p class="text-gray-400">info@studiofit.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4 pt-4">
+                            <a href="#" class="bg-fit-red text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-red-700 transition transform hover:scale-110">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-600 transition transform hover:scale-110">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-600 transition transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="bg-fit-gray rounded-2xl overflow-hidden shadow-lg h-96 fade-in">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.785575733343!2d-74.0834844250181!3d4.632129942273522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a6cec590c9%3A0x59e1f8b3b25b91b6!2sPlaza%20de%20Bol%C3%ADvar%20de%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1699999999999!5m2!1ses!2sco"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-fit-gray border-t border-gray-700 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Logo y descripción -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-fit-red rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-dumbbell text-white text-lg"></i>
+                        </div>
+                        <div class="text-2xl font-bold text-white">STUDIO<span class="text-fit-red">FIT</span></div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Tu destino premium para fitness y wellness. Transformamos vidas a través de entrenamientos personalizados, tecnología de punta y una comunidad motivadora.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-fit-red transition">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+                        <li><a href="#clases" class="text-gray-400 hover:text-white transition">Clases</a></li>
+                        <li><a href="#planes" class="text-gray-400 hover:text-white transition">Planes</a></li>
+                        <li><a href="#entrenadores" class="text-gray-400 hover:text-white transition">Entrenadores</a></li>
+                        <li><a href="#testimonios" class="text-gray-400 hover:text-white transition">Testimonios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Horarios -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Horarios</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex justify-between">
+                            <span>Lun - Vie:</span>
+                            <span>5:00 - 23:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sábados:</span>
+                            <span>6:00 - 22:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Domingos:</span>
+                            <span>7:00 - 20:00</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <button class="bg-fit-red text-white px-6 py-2 rounded-lg hover:bg-red-700 transition w-full pulse-glow">
+                            <i class="fas fa-dumbbell mr-2"></i>Clase de Prueba Gratis
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Studio Fit. Todos los derechos reservados. | Diseñado con ❤️ para transformar vidas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Cerrar menú móvil si está abierto
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Animación de elementos al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animación
+        document.querySelectorAll('section > div, .fade-in').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
